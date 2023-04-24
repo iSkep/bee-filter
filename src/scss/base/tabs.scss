@@ -1,0 +1,19 @@
+.tabs {
+    &__navigation {
+        display: flex;
+    }
+    &__title {
+        padding: rem(10) rem(15);
+        border: 1px solid #eee;
+        border-radius: rem(5);
+        &._tab-active {
+            border: 1px solid #000;
+        }
+    }
+    &__content {
+        padding: rem(10) rem(15);
+        border: 1px solid #eee;
+    }
+    &__body {
+    }
+}
