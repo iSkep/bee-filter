@@ -34,14 +34,14 @@ import * as flsFunctions from './files/functions.js';
 // flsFunctions.addLoadedClass();
 
 /* Модуль для работы с меню (Бургер) */
-// flsFunctions.menuInit();
+flsFunctions.menuInit();
 
 /* Учет плавающей панели на мобильных устройствах при 100vh */
 // flsFunctions.fullVHfix();
 
 /* Модуль работы со спойлерами */
 // Сниппет (HTML): spoilers
-// flsFunctions.spoilers();
+flsFunctions.spoilers();
 
 /* Модуль работы с табами */
 // Сниппет (HTML): tabs
@@ -53,7 +53,7 @@ import * as flsFunctions from './files/functions.js';
 
 /* Попапы */
 // Сниппет (HTML): pl
-// import './libs/popup.js'
+import './libs/popup.js'
 
 /* Модуль параллакса мышью */
 // import './libs/parallax-mouse.js'

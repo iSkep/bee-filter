@@ -1,4 +1,67 @@
 <header class="header">
     <div class="header__container">
+        <div class="header__body">
+            <button class="menu__icon icon-menu" type="button" aria-label="Открыть меню"><span></span></button>
+            <a class="header__logo" href="#">
+                <svg>
+                    <use xlink:href="@img/icons/sprite-multi.svg#svg-logo-bee"></use>
+                </svg>
+            </a>
+            <div class="header__menu menu">
+                <nav class="menu__body">
+                    <ul data-spoilers="768,max" class="menu__list">
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Пчелы</a>
+                            <button data-spoiler type="button" class="menu__arrow" aria-label="Раскрыть меню"></button>
+                            <div class="menu__sub-menu">
+                                <div class="menu__sub-menu-wrapper">
+                                    <div class="menu__sub-menu-item">
+                                        <h3 class="menu__sub-title">Индийская пчела</h3>
+                                        <ul class="menu__sub-list">
+                                            <li class="menu__sub-item">
+                                                <a href="#" class="menu__sub-link">Красная</a>
+                                            </li>
+                                            <li class="menu__sub-item">
+                                                <a href="#" class="menu__sub-link">Розовая</a>
+                                            </li>
+                                            <li class="menu__sub-item">
+                                                <a href="#" class="menu__sub-link">Черная</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu__sub-menu-item">
+                                        <h3 class="menu__sub-title">Арликовая пчела</h3>
+                                        <ul class="menu__sub-list">
+                                            <li class="menu__sub-item">
+                                                <a href="#" class="menu__sub-link">Красная</a>
+                                            </li>
+                                            <li class="menu__sub-item">
+                                                <a href="#" class="menu__sub-link">Розовая</a>
+                                            </li>
+                                            <li class="menu__sub-item">
+                                                <a href="#" class="menu__sub-link">Черная</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Дом пчелы</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Соты</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Мед</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="../table.html" class="menu__link">Таблица данных</a>
+                        </li>
+                    </ul>
+                    <button class="menu__button" data-popup="#registration" type="button">Регистрация</button>
+                </nav>
+            </div>
+        </div>
     </div>
 </header>
