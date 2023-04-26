@@ -21,6 +21,10 @@
         background-color: $mainColor;
         transition: all 0.3s ease 0s;
     }
+    &_s {
+        padding: 10px 36px;
+        font-size: rem(18);
+    }
     @media (any-hover: hover) {
         &:not(:disabled):hover {
             color: #ffdc55;

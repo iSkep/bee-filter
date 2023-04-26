@@ -73,7 +73,7 @@ flsForms.formFieldsInit({
 */
 
 /* Oтправка формы */
-// flsForms.formSubmit();
+flsForms.formSubmit();
 
 /* Модуль формы "колличество" */
 // flsForms.formQuantity();

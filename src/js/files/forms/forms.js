@@ -117,6 +117,14 @@ export let formValidate = {
         } else if (formRequiredItem.type === 'checkbox' && !formRequiredItem.checked) {
             this.addError(formRequiredItem);
             error++;
+        } else if (formRequiredItem.dataset.required === 'password-confirm') {
+            const password = formRequiredItem.closest('form').querySelector('input[data-required="password"]');
+            if (formRequiredItem.value !== password.value) {
+                this.addError(formRequiredItem);
+                error++;
+            } else {
+                this.removeError(formRequiredItem);
+            }
         } else {
             if (!formRequiredItem.value.trim()) {
                 this.addError(formRequiredItem);

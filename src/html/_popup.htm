@@ -1,10 +1,80 @@
 <div id="registration" aria-hidden="true" class="popup">
     <div class="popup__wrapper">
         <div class="popup__content">
-            <button data-close type="button" class="popup__close">Закрыть</button>
-            <div class="popup__text">
-                Text
-            </div>
+            <button data-close type="button" class="popup__close"></button>
+            <h2 class="popup__title">Зарегистрируйтесь</h2>
+            <form action="#" class="popup-subscribe" data-dev data-popup-message="#registration-thanks">
+                <div class="popup-subscribe__item">
+                    <label for="subscribe-name" class="popup-subscribe__label">Имя</label>
+                    <input
+                        class="popup-subscribe__input"
+                        id="subscribe-name"
+                        autocomplete="off"
+                        type="text"
+                        name="form[]"
+                        data-error="Введите имя"
+                        data-required
+                    />
+                </div>
+                <div class="popup-subscribe__item">
+                    <label for="subscribe-email" class="popup-subscribe__label">Почта</label>
+                    <input
+                        class="popup-subscribe__input"
+                        id="subscribe-email"
+                        autocomplete="off"
+                        type="text"
+                        name="form[]"
+                        data-error="Введите корректную почту"
+                        data-required="email"
+                    />
+                </div>
+                <div class="popup-subscribe__item">
+                    <label for="subscribe-phone" class="popup-subscribe__label">Телефон</label>
+                    <input
+                        class="popup-subscribe__input"
+                        id="subscribe-phone"
+                        autocomplete="off"
+                        type="text"
+                        name="form[]"
+                        data-error="Введите номер телефона"
+                        data-required
+                    />
+                </div>
+                <div class="popup-subscribe__item">
+                    <label for="subscribe-password" class="popup-subscribe__label">Пароль</label>
+                    <input
+                        class="popup-subscribe__input"
+                        id="subscribe-password"
+                        autocomplete="off"
+                        type="password"
+                        name="form[]"
+                        data-error="Введите пароль"
+                        data-required="password"
+                    />
+                </div>
+                <div class="popup-subscribe__item">
+                    <label for="subscribe-password-confirm" class="popup-subscribe__label">Повторите пароль</label>
+                    <input
+                        class="popup-subscribe__input"
+                        id="subscribe-password-confirm"
+                        autocomplete="off"
+                        type="password"
+                        name="form[]"
+                        data-error="Пароли не совпадают"
+                        data-required="password-confirm"
+                    />
+                </div>
+                <button type="submit" class="popup-subscribe__button button button_s">Отправить</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="registration-thanks" aria-hidden="true" class="popup">
+    <div class="popup__wrapper">
+        <div class="popup__content">
+            <button data-close type="button" class="popup__close"></button>
+            <h2 class="popup__title">Спасибо!</h2>
         </div>
     </div>
 </div>

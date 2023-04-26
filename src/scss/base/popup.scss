@@ -22,17 +22,17 @@ body::after {
     right: 0;
     bottom: 0;
     left: 0;
-    padding: 30px 10px;
+    padding: 30px;
     pointer-events: none;
     visibility: hidden;
     transition: visibility 0.8s ease 0s;
     &__content {
         width: 100%;
-        max-width: 900px;
-        padding: 20px;
+        max-width: 350px;
+        padding: 50px 20px 20px 20px;
         visibility: hidden;
         background-color: #eee;
-        border-radius: 20px;
+        border-radius: 15px;
         transition: transform 0.3s ease 0s;
         transform: scale(0);
         .lock & {
@@ -47,6 +47,35 @@ body::after {
         justify-content: center;
         width: 100%;
         min-height: 100%;
+    }
+    &__close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: rem(24);
+        height: rem(24);
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            width: 100%;
+            height: rem(2);
+            background-color: $mainColor;
+        }
+        &::before {
+            top: calc(50% - rem(1));
+            transform: rotate(-45deg);
+        }
+        &::after {
+            bottom: calc(50% - rem(1));
+            transform: rotate(45deg);
+        }
+    }
+    &__title {
+        margin-bottom: rem(30);
+        font-size: rem(24);
+        text-align: center;
     }
     &_show {
         z-index: 150;

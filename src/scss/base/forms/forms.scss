@@ -1,20 +1,47 @@
 // <FORM>
-// Снипет (HTML):
-.form {
-    &__row {
+.popup-subscribe {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: rem(30);
+    .form__error {
+        bottom: -15px;
+        padding: 5px 0;
+        font-size: rem(13);
+        color: #ff0000;
+        @media (max-width: $mobileSmall) {
+            top: 35px;
+            bottom: auto;
+        }
     }
-    &__column {
+    &__label {
+        position: absolute;
+        top: -16px;
+        left: 0;
+        font-size: rem(13);
+        opacity: 0.5;
+        @media (max-width: $mobileSmall) {
+            top: -20px;
+        }
     }
-    &__line {
+    &__item {
+        position: relative;
     }
     &__input {
-    }
-    &__button {
-    }
-    &__error {
+        width: 100%;
+        padding: 12px;
+        background: transparent;
+        border: 1px solid rgba($color: $mainColor, $alpha: 0.5);
+        outline: none;
+        transition: all 0.3s ease 0s;
+        &:focus {
+            box-shadow: 0 0 5px rgba($color: $mainColor, $alpha: 0.5);
+        }
+        ._form-error & {
+            border: 1px solid #ff0000;
+        }
     }
 }
-// </FORM>
 
 // <BUTTONS>
 // Снипет (HTML): btn
