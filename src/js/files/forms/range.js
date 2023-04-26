@@ -7,36 +7,50 @@ import * as noUiSlider from 'nouislider';
 // Подключение cтилей из node_modules
 // import 'nouislider/dist/nouislider.css';
 
+const rangeItems = document.querySelectorAll('[data-range]');
 export function rangeInit() {
-    const priceSlider = document.querySelector('#range');
-    if (priceSlider) {
-        let textFrom = priceSlider.getAttribute('data-from');
-        let textTo = priceSlider.getAttribute('data-to');
-        noUiSlider.create(priceSlider, {
-            start: 0, // [0,200000]
-            connect: [true, false],
-            range: {
-                min: [0],
-                max: [200000],
-            },
+    if (rangeItems.length) {
+        rangeItems.forEach((rangeItem) => {
+            const fromValue = rangeItem.querySelector('[data-range-from]');
+            const toValue = rangeItem.querySelector('[data-range-to]');
+            const item = rangeItem.querySelector('[data-range-item]');
+            const inputs = [fromValue, toValue];
+            noUiSlider.create(item, {
+                start: [Number(fromValue.value), Number(toValue.value)], // [0,200000]
+                connect: true,
+                step: 1,
+                tooltips: [false, false],
+                range: {
+                    min: [Number(fromValue.dataset.rangeFrom)],
+                    max: [Number(toValue.dataset.rangeTo)],
+                },
+                format: {
+                    from: function (rangeItem) {
+                        return parseInt(rangeItem);
+                    },
+                    to: function (rangeItem) {
+                        return parseInt(rangeItem);
+                    },
+                },
+            });
+
+            // при изменений положения элементов управления слайдера изменяем соответствующие значения
+            item.noUiSlider.on('update', function (values, handle) {
+                inputs[handle].value = values[handle];
+            });
+
+            // при изменении меньшего значения в input - меняем положение соответствующего элемента управления
+            fromValue.addEventListener('change', function () {
+                item.noUiSlider.set([this.value, null]);
+            });
+
+            // при изменении большего значения в input - меняем положение соответствующего элемента управления
+            toValue.addEventListener('change', function () {
+                item.noUiSlider.set([null, this.value]);
+            });
         });
-        /*
-        const priceStart = document.getElementById('price-start');
-        const priceEnd = document.getElementById('price-end');
-        priceStart.addEventListener('change', setPriceValues);
-        priceEnd.addEventListener('change', setPriceValues);
-        */
-        function setPriceValues() {
-            let priceStartValue;
-            let priceEndValue;
-            if (priceStart.value != '') {
-                priceStartValue = priceStart.value;
-            }
-            if (priceEnd.value != '') {
-                priceEndValue = priceEnd.value;
-            }
-            priceSlider.noUiSlider.set([priceStartValue, priceEndValue]);
-        }
     }
 }
 rangeInit();
+
+export { rangeItems };

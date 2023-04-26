@@ -3,7 +3,7 @@
 .rating {
     display: flex;
     align-items: flex-end;
-    font-size: 40px;
+    font-size: 38px;
     line-height: 0.75;
     transition: opacity 0.3s ease 0s;
 }
@@ -34,6 +34,7 @@
 
 .rating__body {
     position: relative;
+    color: $bgColor;
 }
 
 .rating__body::before {
@@ -48,7 +49,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    color: #ffd300;
+    color: $mainColor;
 }
 
 .rating__items {
@@ -61,7 +62,8 @@
 }
 
 .rating__value {
-    padding: 0 0 0 10px;
-    font-size: 50%;
-    line-height: 1;
+    // padding: 0 0 0 10px;
+    // font-size: 50%;
+    // line-height: 1;
+    display: none;
 }

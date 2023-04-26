@@ -1,13 +1,35 @@
 // Заголовки, общие БЭМ блоки и проче...
 
-// .visually-hidden {
-//     position: absolute !important;
-//     width: 1px !important;
-//     height: 1px !important;
-//     padding: 0 !important;
-//     margin: -1px !important; // Fix for https://github.com/twbs/bootstrap/issues/25686
-//     overflow: hidden !important;
-//     clip: rect(0, 0, 0, 0) !important;
-//     white-space: nowrap !important;
-//     border: 0 !important;
-// }
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important; // Fix for https://github.com/twbs/bootstrap/issues/25686
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+.title {
+    font-size: rem(34);
+}
+
+.subtitle {
+    margin-bottom: rem(20);
+    font-size: rem(24);
+}
+
+.line {
+    display: block;
+    height: 1px;
+    margin: rem(30) 0;
+    background-color: $bgColor;
+    border: none;
+    &_mobile {
+        @media (min-width: $mobile) {
+            display: none;
+        }
+    }
+}

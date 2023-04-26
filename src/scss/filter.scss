@@ -1,0 +1,96 @@
+.filter {
+    padding: 70px 0;
+    &__container {}
+
+    &__row {
+        display: flex;
+        gap: rem(70);
+        @media (max-width: $mobile) {
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+    &__item {
+        flex: 1 1 50%;
+        max-width: 50%;
+        @media (max-width: $mobile) {
+            flex: 1 1 100%;
+            max-width: 100%;
+        }
+    }
+    &__select {
+        max-width: 100%;
+        padding-right: 32px;
+    }
+    &__buttons {
+        display: flex;
+        flex: 1 1 auto;
+        flex-wrap: wrap;
+        gap: rem(5);
+        justify-content: space-between;
+        max-width: 50%;
+        @media (max-width: $mobile) {
+            min-width: 100%;
+        }
+    }
+}
+
+.price-filter {
+    &__body {
+        padding: 15px 8px 40px 8px;
+    }
+    &__inputs {
+        display: flex;
+        @include adaptiveValue("gap", 20, 5, 767.98, 320, 1);
+        align-items: center;
+        overflow: hidden;
+        &:not(:last-child) {
+            margin-bottom: rem(44);
+        }
+    }
+    &__input {
+        flex: 1 1 auto;
+        max-width: 100%;
+        height: rem(40);
+        padding: 0 rem(10);
+        font-size: rem(14);
+        color: #333;
+        text-align: left;
+        background: #fff url("@img/icons/dollar.svg") no-repeat calc(100% - 10px) / 12px 18px;
+        // &:nth-child(2) {
+        //     margin-right: 5px;
+        // }
+        @media (max-width: $mobile) {
+            max-width: 40%;
+        }
+    }
+}
+
+.type-filter {
+    &__body {
+        padding: 5px 0;
+    }
+    &__checkbox {
+        &:not(:last-child) {
+            margin-bottom: rem(22);
+        }
+    }
+}
+
+.manufacturer-filter {
+    &__body {
+        padding: 5px 0;
+    }
+    &__checkbox {
+        &:not(:last-child) {
+            margin-bottom: rem(25);
+        }
+    }
+}
+
+.cloth-filter {
+    &__body {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

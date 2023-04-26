@@ -267,6 +267,7 @@ export function spoilers() {
                 const spoilerTitle = el.closest('[data-spoiler]');
                 const spoilersBlock = spoilerTitle.closest('[data-spoilers]');
                 const oneSpoiler = spoilersBlock.hasAttribute('data-one-spoiler');
+                const spoilerLink = el.previousElementSibling;
                 const spoilerSpeed = spoilersBlock.dataset.spoilersSpeed
                     ? parseInt(spoilersBlock.dataset.spoilersSpeed)
                     : 500;
@@ -275,6 +276,9 @@ export function spoilers() {
                         hideSpoilersBody(spoilersBlock);
                     }
                     spoilerTitle.classList.toggle('_spoiler-active');
+                    if (spoilerLink) {
+                        spoilerLink.classList.toggle('_link-active');
+                    }
                     _slideToggle(spoilerTitle.nextElementSibling, spoilerSpeed);
                 }
                 e.preventDefault();
