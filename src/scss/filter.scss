@@ -41,7 +41,7 @@
     }
     &__inputs {
         display: flex;
-        @include adaptiveValue("gap", 20, 5, 767.98, 320, 1);
+        @include adaptiveValue("gap", 20, 5, 1100, 320, 1);
         align-items: center;
         overflow: hidden;
         &:not(:last-child) {
@@ -50,16 +50,13 @@
     }
     &__input {
         flex: 1 1 auto;
-        max-width: 100%;
+        max-width: 40%;
         height: rem(40);
         padding: 0 rem(10);
         font-size: rem(14);
         color: #333;
         text-align: left;
         background: #fff url("@img/icons/dollar.svg") no-repeat calc(100% - 10px) / 12px 18px;
-        // &:nth-child(2) {
-        //     margin-right: 5px;
-        // }
         @media (max-width: $mobile) {
             max-width: 40%;
         }

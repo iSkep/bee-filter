@@ -54,16 +54,26 @@
         width: 100%;
         border-spacing: 8px 10px;
         background-color: $bgColor;
+        @media (max-width: $mobileSmall) {
+            border-spacing: 3px;
+        }
         th {
             padding: 12px;
             font-weight: 400;
             color: rgba($color: #fff, $alpha: 0.7);
             background-color: $mainColor;
+            @media (max-width: $mobileSmall) {
+                padding: 4px;
+                font-size: rem(12);
+            }
         }
         td {
             padding: 4px 15px;
-            font-size: rem(14);
+            @include adaptiveValue("font-size", 14, 12);
             background-color: #fff;
+            @media (max-width: $mobileSmall) {
+                padding: 4px;
+            }
         }
     }
     &__col {
@@ -89,6 +99,7 @@
         }
     }
     &__price {
+        min-width: 60px;
         background: #fff url("@img/icons/dollar.svg") no-repeat calc(100% - 10px) / 10px 15px;
     }
 }

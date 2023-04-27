@@ -23,7 +23,7 @@
         height: rem(40);
         padding: 0 rem(12) 0 rem(35);
         @media (max-width: $mobileSmall) {
-            padding: 0 rem(6);
+            padding: 0 rem(24);
         }
         > * {
             flex: 1 1 auto;
@@ -126,6 +126,7 @@
 ._select-tag {
     position: relative;
     cursor: pointer;
+    @include adaptiveValue("font-size", 14, 10);
     &::after {
         content: "";
         position: absolute;
@@ -138,5 +139,11 @@
     }
     &:not(:last-child) {
         margin-right: rem(30);
+        @media (max-width: $mobileSmall) {
+            margin-right: rem(20);
+        }
+    }
+    @media (max-width: $mobileSmall) {
+        font-size: rem(10);
     }
 }

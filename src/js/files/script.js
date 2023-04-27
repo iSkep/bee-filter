@@ -7,9 +7,11 @@ import { postData, getResource } from '../files/services/services.js';
 
 document.addEventListener('DOMContentLoaded', function () {
     resetBtnInit();
-    getResource('http://localhost:3001/numbers?_embed=products').then((data) => createTable(data));
-
     document.addEventListener('click', documentActions);
+
+    if (window.location.pathname === '/data-table.html') {
+        getResource('http://localhost:3001/numbers?_embed=products').then((data) => createTable(data));
+    }
 
     function documentActions(e) {
         const targetElement = e.target;
