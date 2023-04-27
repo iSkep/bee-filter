@@ -4,9 +4,9 @@ import * as flsFunctions from './functions.js';
 import * as flsForms from './forms/forms.js';
 import { rangeItems } from './forms/range.js';
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function () {
     resetBtnInit();
-    document.addEventListener("click", documentActions);
+    document.addEventListener('click', documentActions);
 
     // Actions (click event delegation)
     function documentActions(e) {
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 targetElement.closest('.menu__item').classList.toggle('_hover');
             }
             if (!targetElement.closest('.menu__item') && document.querySelectorAll('.menu__item._hover').length > 0) {
-                flsFunctions.removeClasses(document.querySelectorAll('.menu__item._hover'), "_hover");
+                flsFunctions.removeClasses(document.querySelectorAll('.menu__item._hover'), '_hover');
             }
         }
     }
@@ -25,36 +25,38 @@ document.addEventListener("DOMContentLoaded", function() {
         const resetBtn = document.querySelector('.filter__reset');
         const checkboxes = document.querySelectorAll('.filter input[type=checkbox]');
         const radios = document.querySelectorAll('.filter input[type=radio]');
-        const ratings = document.querySelectorAll('.rating__value')
+        const ratings = document.querySelectorAll('.rating__value');
         const selectOptions = document.querySelectorAll('.select__option');
-    
-        resetBtn.addEventListener('click', () => {
-            checkboxes.forEach((checkbox) => {
-                checkbox.checked = false;
-            });
 
-            radios.forEach((radio) => {
-                radio.checked = false;
-            });
+        if (resetBtn) {
+            resetBtn.addEventListener('click', () => {
+                checkboxes.forEach((checkbox) => {
+                    checkbox.checked = false;
+                });
 
-            ratings.forEach((rating) => {
-                rating.innerHTML = '3';
-                flsForms.formRating();
-            });
-            
-            rangeItems.forEach((rangeItem) => {
-                const item = rangeItem.querySelector('[data-range-item]');
-                item.noUiSlider.reset();
-            });
+                radios.forEach((radio) => {
+                    radio.checked = false;
+                });
 
-            const selectTags = document.querySelectorAll('._select-tag');
-            selectTags.forEach(tag => {
-                tag.remove();
-            });
+                ratings.forEach((rating) => {
+                    rating.innerHTML = '3';
+                    flsForms.formRating();
+                });
 
-            selectOptions.forEach(option => {
-                option.classList.remove('_select-selected');
+                rangeItems.forEach((rangeItem) => {
+                    const item = rangeItem.querySelector('[data-range-item]');
+                    item.noUiSlider.reset();
+                });
+
+                const selectTags = document.querySelectorAll('._select-tag');
+                selectTags.forEach((tag) => {
+                    tag.remove();
+                });
+
+                selectOptions.forEach((option) => {
+                    option.classList.remove('_select-selected');
+                });
             });
-        });
+        }
     }
-})
+});

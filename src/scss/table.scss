@@ -1,0 +1,94 @@
+.table {
+    padding: 80px 0;
+}
+
+.spoilers {
+    &__item {
+        padding: 5px 0;
+        &:first-child {
+            padding-top: 0;
+        }
+    }
+    &__button {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px 17px 10px 40px;
+        font-size: rem(16);
+        line-height: 140%;
+        color: #fff;
+        text-align: left;
+        background-color: $mainColor;
+        opacity: 0.6;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 27px;
+            width: 2px;
+            height: 18px;
+            background-color: #fff;
+            transition: transform 0.3s ease-out;
+            transform: translate(-9px, -50%);
+        }
+        &._spoiler-active {
+            &::before {
+                transform: translate(-9px, -50%) rotate(270deg);
+            }
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            width: 18px;
+            height: 2px;
+            background-color: #fff;
+            transition: transform 0.3s ease-out;
+            transform: translate(0, -50%);
+        }
+    }
+    &__table {
+        width: 100%;
+        border-spacing: 8px 10px;
+        background-color: $bgColor;
+        th {
+            padding: 12px;
+            font-weight: 400;
+            color: rgba($color: #fff, $alpha: 0.7);
+            background-color: $mainColor;
+        }
+        td {
+            padding: 4px 15px;
+            font-size: rem(14);
+            background-color: #fff;
+        }
+    }
+    &__col {
+        &-1 {
+            width: 30%;
+        }
+        &-2 {
+            width: 45%;
+        }
+        &-3 {
+            width: 10%;
+        }
+        &-4 {
+            width: 15%;
+        }
+    }
+    &__image {
+        height: 34px;
+        text-align: center;
+        svg {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+    &__price {
+        background: #fff url("@img/icons/dollar.svg") no-repeat calc(100% - 10px) / 10px 15px;
+    }
+}
