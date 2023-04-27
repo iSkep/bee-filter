@@ -8,7 +8,7 @@
     "type": "module",
     "scripts": {
         "start": "npm i --legacy-peer-deps",
-        "dev": "gulp && webpack serve --progress -c config/webpack.dev.js",
+        "dev": "concurrently \"gulp && webpack serve --progress -c config/webpack.dev.js\" \"npx json-server ./src/db.json --port 3001\"",
         "build": "gulp build --build",
         "sprite": "gulp sprites",
         "fonts": "gulp fonts --rewrite",
@@ -81,6 +81,8 @@
         "webpack-stream": "latest"
     },
     "dependencies": {
+        "concurrently": "^8.0.1",
+        "json-server": "^0.17.3",
         "simplebar": "latest"
     }
 }
