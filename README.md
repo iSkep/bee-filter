@@ -1,10 +1,11 @@
-# [SITE NAME](https://sitename-skep.netlify.app/) | Site description
+# [BEE FILTER](https://bee-skep.netlify.app/) | Filter
 
 ## 🐱‍💻 Tech stack
 * HTML, CSS, SCSS
 * JavaScript
 * Gulp, Webpack
 * BEM
+* JSON
 
 # 📜 Template Description
 ## ⌨️ Commands
