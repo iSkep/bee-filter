@@ -1,172 +1,174 @@
 <section class="filter">
     <div class="filter__container">
-        <h1 class="filter__title title">Фильтр результатов</h1>
-        <hr class="line"/>
-        <div class="filter__row">
-            <div class="filter__item">
-                <h2 class="filter__subtitle subtitle">Цена</h2>
-                <div class="filter__price price-filter">
-                    <div data-range class="price-filter__body">
-                        <div class="price-filter__inputs">
-                            <span>от</span>
-                            <input data-range-from="0" autocomplete="off" type="text" value="100" name="form[]" class="price-filter__input">
-                            <span>до</span>
-                            <input data-range-to="1000" autocomplete="off" type="text" value="400" name="form[]" class="price-filter__input">
-                        </div>
-                        <div data-range-item class="price-filter__range"></div>
-                    </div>
-                </div>
-            </div>
-            <hr class="line line_mobile">
-            <div class="filter__item">
-                <h2 class="filter__subtitle subtitle">Вид пчел</h2>
-                <div class="filter__type type-filter">
-                    <div class="type-filter__body">
-                        <div class="type-filter__checkbox checkbox">
-                            <input id="t_1" data-error="Ошибка" class="checkbox__input visually-hidden" type="checkbox" value="1" name="form[]" disabled>
-                            <label for="t_1" class="checkbox__label"><span class="checkbox__text">Большая индийская пчела</span></label>
-                        </div>
-                        <div class="type-filter__checkbox checkbox">
-                            <input id="t_2" data-error="Ошибка" class="checkbox__input visually-hidden" type="checkbox" value="1" name="form[]" disabled>
-                            <label for="t_2" class="checkbox__label"><span class="checkbox__text">Медоносная пчела</span></label>
-                        </div>
-                        <div class="type-filter__checkbox checkbox">
-                            <input id="t_3" data-error="Ошибка" class="checkbox__input visually-hidden" type="checkbox" value="1" name="form[]">
-                            <label for="t_3" class="checkbox__label"><span class="checkbox__text">Индийская пчела</span></label>
-                        </div>
-                        <div class="type-filter__checkbox checkbox">
-                            <input id="t_4" data-error="Ошибка" class="checkbox__input visually-hidden" type="checkbox" value="1" name="form[]">
-                            <label for="t_4" class="checkbox__label"><span class="checkbox__text">Арликовая пчела</span></label>
+        <form action="#" id="mainForm">
+            <h1 class="filter__title title">Фильтр результатов</h1>
+            <hr class="line"/>
+            <div class="filter__row">
+                <div class="filter__item">
+                    <h2 class="filter__subtitle subtitle">Цена</h2>
+                    <div class="filter__price price-filter">
+                        <div data-range class="price-filter__body">
+                            <div class="price-filter__inputs">
+                                <span>от</span>
+                                <input data-range-from="0" autocomplete="off" type="text" value="100" name="price" class="price-filter__input">
+                                <span>до</span>
+                                <input data-range-to="1000" autocomplete="off" type="text" value="400" name="price" class="price-filter__input">
+                            </div>
+                            <div data-range-item class="price-filter__range"></div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <hr class="line"/>
-        <div class="filter__row">
-            <div class="filter__item">
-                <h2 class="filter__subtitle subtitle">Рейтинг пчел</h2>
-                <div class="filter__rating rating rating_set">
-                    <div class="rating__body">
-                        <div class="rating__active"></div>
-                        <div class="rating__items">
-                            <input type="radio" class="rating__item" value="1" name="rating">
-                            <input type="radio" class="rating__item" value="2" name="rating">
-                            <input type="radio" class="rating__item" value="3" name="rating">
-                            <input type="radio" class="rating__item" value="4" name="rating">
-                            <input type="radio" class="rating__item" value="5" name="rating">
-                        </div>
-                    </div>
-                    <div class="rating__value">3</div>
-                </div>
-            </div>
-            <hr class="line line_mobile">
-            <div class="filter__item">
-                <h2 class="filter__subtitle subtitle">Выбрать производителя</h2>
-                <div class="filter__manufacturer manufacturer-filter">
-                    <div class="manufacturer-filter__body">
-                        <div class="manufacturer-filter__checkbox checkbox">
-                            <input id="m_1" data-error="Ошибка" class="checkbox__input visually-hidden" type="checkbox" value="1" name="form[]" disabled>
-                            <label for="m_1" class="checkbox__label checkbox__label_round checkbox__label_rectangle">
-                                <svg>
-                                    <use xlink:href="@img/icons/sprite.svg#svg-logo-sony"></use>
-                                </svg>
-                            </label>
-                        </div>
-                        <div class="manufacturer-filter__checkbox checkbox">
-                            <input id="m_2" data-error="Ошибка" class="checkbox__input visually-hidden" type="checkbox" value="1" name="form[]">
-                            <label for="m_2" class="checkbox__label checkbox__label_round checkbox__label_rectangle">
-                                <svg>
-                                    <use xlink:href="@img/icons/sprite.svg#svg-logo-sony"></use>
-                                </svg>
-                            </label>
-                        </div>
-                        <div class="manufacturer-filter__checkbox checkbox">
-                            <input id="m_3" data-error="Ошибка" class="checkbox__input visually-hidden" type="checkbox" value="1" name="form[]">
-                            <label for="m_3" class="checkbox__label checkbox__label_round checkbox__label_rectangle">
-                                <svg>
-                                    <use xlink:href="@img/icons/sprite.svg#svg-logo-sony"></use>
-                                </svg>
-                            </label>
+                <hr class="line line_mobile">
+                <div class="filter__item">
+                    <h2 class="filter__subtitle subtitle">Вид пчел</h2>
+                    <div class="filter__type type-filter">
+                        <div class="type-filter__body">
+                            <div class="type-filter__checkbox checkbox">
+                                <input id="t_1" data-error="Ошибка" class="checkbox__input visually-hidden" type="checkbox" value="1" name="type" disabled>
+                                <label for="t_1" class="checkbox__label"><span class="checkbox__text">Большая индийская пчела</span></label>
+                            </div>
+                            <div class="type-filter__checkbox checkbox">
+                                <input id="t_2" data-error="Ошибка" class="checkbox__input visually-hidden" type="checkbox" value="2" name="type" disabled>
+                                <label for="t_2" class="checkbox__label"><span class="checkbox__text">Медоносная пчела</span></label>
+                            </div>
+                            <div class="type-filter__checkbox checkbox">
+                                <input id="t_3" data-error="Ошибка" class="checkbox__input visually-hidden" type="checkbox" value="3" name="type">
+                                <label for="t_3" class="checkbox__label"><span class="checkbox__text">Индийская пчела</span></label>
+                            </div>
+                            <div class="type-filter__checkbox checkbox">
+                                <input id="t_4" data-error="Ошибка" class="checkbox__input visually-hidden" type="checkbox" value="4" name="type">
+                                <label for="t_4" class="checkbox__label"><span class="checkbox__text">Арликовая пчела</span></label>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <hr class="line"/>
-        <div class="filter__row">
-            <div class="filter__item">
-                <h2 class="filter__subtitle subtitle">Волосатость брюшка пчелы</h2>
-                <select data-speed="100" data-class-modif="filter" name="form[]" data-show-selected data-tags multiple>
-                    <option value="1">Большая индийская пчела</option>
-                    <option value="2">Медоносная пчела</option>
-                    <option value="3">Индийская пчела</option>
-                    <option value="4">Арликовая пчела</option>
-                </select>
-            </div>
-            <hr class="line line_mobile">
-            <div class="filter__item">
-                <h2 class="filter__subtitle subtitle">Выбрать тип одежды</h2>
-                <div class="filter__cloth cloth-filter">
-                    <div class="cloth-filter__body">
-                        <div class="cloth-filter__checkbox checkbox">
-                            <input id="c_1" data-error="Ошибка" class="checkbox__input visually-hidden" type="radio" value="1" name="form[]">
-                            <label for="c_1" class="checkbox__label checkbox__label_square">
-                                <svg width="63" height="41">
-                                    <use xlink:href="@img/icons/sprite.svg#svg-jacket"></use>
-                                </svg>
-                            </label>
+            <hr class="line"/>
+            <div class="filter__row">
+                <div class="filter__item">
+                    <h2 class="filter__subtitle subtitle">Рейтинг пчел</h2>
+                    <div class="filter__rating rating rating_set">
+                        <div class="rating__body">
+                            <div class="rating__active"></div>
+                            <div class="rating__items">
+                                <input type="radio" class="rating__item" value="1" name="rating">
+                                <input type="radio" class="rating__item" value="2" name="rating">
+                                <input type="radio" class="rating__item" value="3" name="rating">
+                                <input type="radio" class="rating__item" value="4" name="rating">
+                                <input type="radio" class="rating__item" value="5" name="rating">
+                            </div>
                         </div>
-                        <div class="cloth-filter__checkbox checkbox">
-                            <input id="c_2" data-error="Ошибка" class="checkbox__input visually-hidden" type="radio" value="2" name="form[]">
-                            <label for="c_2" class="checkbox__label checkbox__label_square">
-                                <svg width="13" height="65">
-                                    <use xlink:href="@img/icons/sprite.svg#svg-watch"></use>
-                                </svg>
-                            </label>
-                        </div>
-                        <div class="cloth-filter__checkbox checkbox">
-                            <input id="c_3" data-error="Ошибка" class="checkbox__input visually-hidden" type="radio" value="3" name="form[]">
-                            <label for="c_3" class="checkbox__label checkbox__label_square">
-                                <svg width="34" height="51">
-                                    <use xlink:href="@img/icons/sprite.svg#svg-pants"></use>
-                                </svg>
-                            </label>
-                        </div>
-                        <div class="cloth-filter__checkbox checkbox">
-                            <input id="c_4" data-error="Ошибка" class="checkbox__input visually-hidden" type="radio" value="4" name="form[]">
-                            <label for="c_4" class="checkbox__label checkbox__label_square">
-                                <svg width="28" height="61">
-                                    <use xlink:href="@img/icons/sprite.svg#svg-robe"></use>
-                                </svg>
-                            </label>
-                        </div>
-                        <div class="cloth-filter__checkbox checkbox">
-                            <input id="c_5" data-error="Ошибка" class="checkbox__input visually-hidden" type="radio" value="5" name="form[]">
-                            <label for="c_5" class="checkbox__label checkbox__label_square">
-                                <svg width="60" height="49">
-                                    <use xlink:href="@img/icons/sprite.svg#svg-blouse"></use>
-                                </svg>
-                            </label>
-                        </div>
-                        <div class="cloth-filter__checkbox checkbox">
-                            <input id="c_6" data-error="Ошибка" class="checkbox__input visually-hidden" type="radio" value="6" name="form[]">
-                            <label for="c_6" class="checkbox__label checkbox__label_square">
-                                <svg width="30" height="35">
-                                    <use xlink:href="@img/icons/sprite.svg#svg-shoes"></use>
-                                </svg>
-                            </label>
+                        <div class="rating__value">3</div>
+                    </div>
+                </div>
+                <hr class="line line_mobile">
+                <div class="filter__item">
+                    <h2 class="filter__subtitle subtitle">Выбрать производителя</h2>
+                    <div class="filter__manufacturer manufacturer-filter">
+                        <div class="manufacturer-filter__body">
+                            <div class="manufacturer-filter__checkbox checkbox">
+                                <input id="m_1" data-error="Ошибка" class="checkbox__input visually-hidden" type="checkbox" value="1" name="manufacturer" disabled>
+                                <label for="m_1" class="checkbox__label checkbox__label_round checkbox__label_rectangle">
+                                    <svg>
+                                        <use xlink:href="@img/icons/sprite.svg#svg-logo-sony"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <div class="manufacturer-filter__checkbox checkbox">
+                                <input id="m_2" data-error="Ошибка" class="checkbox__input visually-hidden" type="checkbox" value="2" name="manufacturer">
+                                <label for="m_2" class="checkbox__label checkbox__label_round checkbox__label_rectangle">
+                                    <svg>
+                                        <use xlink:href="@img/icons/sprite.svg#svg-logo-sony"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <div class="manufacturer-filter__checkbox checkbox">
+                                <input id="m_3" data-error="Ошибка" class="checkbox__input visually-hidden" type="checkbox" value="3" name="manufacturer">
+                                <label for="m_3" class="checkbox__label checkbox__label_round checkbox__label_rectangle">
+                                    <svg>
+                                        <use xlink:href="@img/icons/sprite.svg#svg-logo-sony"></use>
+                                    </svg>
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <hr class="line"/>
-        <div class="filter__row">
-            <div class="filter__buttons">
-                <button class="filter__send button" type="button">Записать</button>
-                <button class="filter__reset button" type="button">Сбросить</button>
+            <hr class="line"/>
+            <div class="filter__row">
+                <div class="filter__item">
+                    <h2 class="filter__subtitle subtitle">Волосатость брюшка пчелы</h2>
+                    <select data-speed="100" data-class-modif="filter" name="hairiness" data-show-selected data-tags multiple>
+                        <option value="1">Большая индийская пчела</option>
+                        <option value="2">Медоносная пчела</option>
+                        <option value="3">Индийская пчела</option>
+                        <option value="4">Арликовая пчела</option>
+                    </select>
+                </div>
+                <hr class="line line_mobile">
+                <div class="filter__item">
+                    <h2 class="filter__subtitle subtitle">Выбрать тип одежды</h2>
+                    <div class="filter__cloth cloth-filter">
+                        <div class="cloth-filter__body">
+                            <div class="cloth-filter__checkbox checkbox">
+                                <input id="c_1" data-error="Ошибка" class="checkbox__input visually-hidden" type="radio" value="1" name="clothId">
+                                <label for="c_1" class="checkbox__label checkbox__label_square">
+                                    <svg width="63" height="41">
+                                        <use xlink:href="@img/icons/sprite.svg#svg-jacket"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <div class="cloth-filter__checkbox checkbox">
+                                <input id="c_2" data-error="Ошибка" class="checkbox__input visually-hidden" type="radio" value="2" name="clothId">
+                                <label for="c_2" class="checkbox__label checkbox__label_square">
+                                    <svg width="13" height="65">
+                                        <use xlink:href="@img/icons/sprite.svg#svg-watch"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <div class="cloth-filter__checkbox checkbox">
+                                <input id="c_3" data-error="Ошибка" class="checkbox__input visually-hidden" type="radio" value="3" name="clothId">
+                                <label for="c_3" class="checkbox__label checkbox__label_square">
+                                    <svg width="34" height="51">
+                                        <use xlink:href="@img/icons/sprite.svg#svg-pants"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <div class="cloth-filter__checkbox checkbox">
+                                <input id="c_4" data-error="Ошибка" class="checkbox__input visually-hidden" type="radio" value="4" name="clothId">
+                                <label for="c_4" class="checkbox__label checkbox__label_square">
+                                    <svg width="28" height="61">
+                                        <use xlink:href="@img/icons/sprite.svg#svg-robe"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <div class="cloth-filter__checkbox checkbox">
+                                <input id="c_5" data-error="Ошибка" class="checkbox__input visually-hidden" type="radio" value="5" name="clothId">
+                                <label for="c_5" class="checkbox__label checkbox__label_square">
+                                    <svg width="60" height="49">
+                                        <use xlink:href="@img/icons/sprite.svg#svg-blouse"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <div class="cloth-filter__checkbox checkbox">
+                                <input id="c_6" data-error="Ошибка" class="checkbox__input visually-hidden" type="radio" value="6" name="clothId">
+                                <label for="c_6" class="checkbox__label checkbox__label_square">
+                                    <svg width="30" height="35">
+                                        <use xlink:href="@img/icons/sprite.svg#svg-shoes"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+            <hr class="line"/>
+            <div class="filter__row">
+                <div class="filter__buttons">
+                    <button class="filter__send button" type="submit">Записать</button>
+                    <button class="filter__reset button" type="button">Сбросить</button>
+                </div>
+            </div>
+        </form>
     </div>
 </section>

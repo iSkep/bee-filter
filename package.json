@@ -83,6 +83,7 @@
     "dependencies": {
         "concurrently": "^8.0.1",
         "json-server": "^0.17.3",
-        "simplebar": "latest"
+        "simplebar": "latest",
+        "uuid": "^9.0.0"
     }
 }

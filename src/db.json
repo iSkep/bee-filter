@@ -1,62 +1,76 @@
 {
-    "numbers": [
-        {
-          "id": "44",
-          "number": "125548",
-          "date": "12.03.2022"
-        },
-        {
-          "id": "55",
-          "number": "125549",
-          "date": "13.03.2022"
-          
-        },
-        {
-          "id": "66",
-          "number": "125550",
-          "date": "24.03.2022"
-        }
-      ],
-    "products": [
-        {
-            "id": "1",
-            "numberId": "44",
-            "type": "Индийская пчела",
-            "hairiness": "Индийская пчела",
-            "clothId": "1",
-            "price": "70"
-        },
-        {
-            "id": "2",
-            "numberId": "44",
-            "type": "Арликовая пчела",
-            "hairiness": "Арликовая пчела",
-            "clothId": "2",
-            "price": "45"
-        },
-        {
-            "id": "3",
-            "numberId": "44",
-            "type": "Медоносная пчела",
-            "hairiness": "Медоносная пчела",
-            "clothId": "3",
-            "price": "700"
-        },
-        {
-            "id": "4",
-            "numberId": "55",
-            "type": "Индийская пчела",
-            "hairiness": "Индийская пчела",
-            "clothId": "4",
-            "price": "500"
-        },
-        {
-            "id": "5",
-            "numberId": "66",
-            "type": "Индийская пчела",
-            "hairiness": "Индийская пчела",
-            "clothId": "4",
-            "price": "500"
-        }
-    ]
+  "numbers": [
+    {
+      "id": "44",
+      "number": "125548",
+      "date": "12.03.2022"
+    },
+    {
+      "id": "55",
+      "number": "125549",
+      "date": "13.03.2022"
+    },
+    {
+      "id": "66",
+      "number": "125550",
+      "date": "24.03.2022"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "numberId": "44",
+      "type": "1",
+      "hairiness": "1",
+      "clothId": "1",
+      "price": [
+        "100",
+        "170"
+      ]
+    },
+    {
+      "id": "2",
+      "numberId": "44",
+      "type": "2",
+      "hairiness": "2",
+      "clothId": "2",
+      "price": [
+        "100",
+        "145"
+      ]
+    },
+    {
+      "id": "3",
+      "numberId": "44",
+      "type": "3",
+      "hairiness": "3",
+      "clothId": "3",
+      "price": [
+        "100",
+        "700"
+      ]
+    },
+    {
+      "id": "4",
+      "numberId": "55",
+      "type": "4",
+      "hairiness": "4",
+      "clothId": "4",
+      "price": [
+        "100",
+        "500"
+      ]
+    },
+    {
+      "id": "5",
+      "numberId": "66",
+      "type": "4",
+      "hairiness": "4",
+      "clothId": "4",
+      "price": [
+        "100",
+        "500"
+      ]
+    }
+  ]
 }

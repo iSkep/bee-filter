@@ -4,9 +4,14 @@ import * as flsFunctions from './functions.js';
 import * as flsForms from './forms/forms.js';
 import { rangeItems } from './forms/range.js';
 import { postData, getResource } from '../files/services/services.js';
+import { v4 as uuidv4 } from 'uuid';
 
 document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('#mainForm');
+    let recordNumber = 125551;
+
     resetBtnInit();
+    sendBtnInit(form);
     document.addEventListener('click', documentActions);
 
     if (window.location.pathname === '/data-table.html') {
@@ -72,41 +77,45 @@ document.addEventListener('DOMContentLoaded', function () {
             element.classList.add('spoilers__item');
             const tableRows = products
                 .map((product) => {
-                    let clothType;
+                    const clothTypes = ['', 'jacket', 'watch', 'pants', 'robe', 'blouse', 'shoes'];
+                    let clothType = clothTypes[product.clothId];
 
-                    switch (product.clothId) {
-                        case '1':
-                            clothType = 'jacket';
-                            break;
-                        case '2':
-                            clothType = 'watch';
-                            break;
-                        case '3':
-                            clothType = 'pants';
-                            break;
-                        case '4':
-                            clothType = 'robe';
-                            break;
-                        case '5':
-                            clothType = 'blouse';
-                            break;
-                        case '6':
-                            clothType = 'shoes';
-                            break;
-                        default:
-                            clothType = '';
-                    }
+                    const hairinessNames = [
+                        '',
+                        'Большая индийская пчела',
+                        'Медоносная пчела',
+                        'Индийская пчела',
+                        'Арликовая пчела',
+                    ];
+                    const hairinessHtml = product.hairiness && Array.isArray(product.hairiness)
+                            ? product.hairiness.map((value) => `<span>${hairinessNames[value]}</span>`).join(', ')
+                            : product.hairiness !== undefined
+                            ? `<span>${hairinessNames[product.hairiness]}</span>`
+                            : '-';
+
+                    const typeNames = [
+                        '',
+                        'Большая индийская пчела',
+                        'Медоносная пчела',
+                        'Индийская пчела',
+                        'Арликовая пчела',
+                    ];
+                    const typeHtml = product.type && Array.isArray(product.type)
+                            ? product.type.map((value) => `<span>${typeNames[value]}</span>`).join(', ')
+                            : product.type !== undefined
+                            ? `<span>${typeNames[product.type]}</span>`
+                            : '-';
 
                     return `
                     <tr>
-                        <td>${product.type}</td>
-                        <td>${product.hairiness}</td>
+                        <td>${typeHtml}</td>
+                        <td>${hairinessHtml}</td>
                         <td class="spoilers__image">
                             <svg>
                                 <use xlink:href="../../img/icons/sprite.svg#svg-${clothType}"></use>
                             </svg>
                         </td>
-                        <td class="spoilers__price">${product.price}</td>
+                        <td class="spoilers__price">${product.price[1]}</td>
                     </tr>
                 `;
                 })
@@ -141,5 +150,55 @@ document.addEventListener('DOMContentLoaded', function () {
 
             parentSelector.append(element);
         });
+    }
+
+    function sendBtnInit(form) {
+        const sendBtn = document.querySelector('.filter__send');
+        if (sendBtn) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const formData = new FormData(form);
+                const date = new Date();
+                const day = date.getDate().toString().padStart(2, '0');
+                const month = (date.getMonth() + 1).toString().padStart(2, '0');
+                const year = date.getFullYear().toString();
+                const formattedDate = `${day}.${month}.${year}`;
+
+                const numbersData = {
+                    id: uuidv4(),
+                    number: recordNumber++,
+                    date: formattedDate,
+                };
+
+                const productsData = {
+                    id: uuidv4(),
+                    numberId: numbersData.id,
+                };
+
+                formData.forEach((value, key) => {
+                    if (productsData[key]) {
+                        if (!Array.isArray(productsData[key])) {
+                            productsData[key] = [productsData[key]];
+                        }
+                        productsData[key].push(value);
+                    } else {
+                        productsData[key] = value;
+                    }
+                });
+
+                async function postAllData() {
+                    try {
+                        await postData('http://localhost:3001/numbers', JSON.stringify(numbersData));
+                        await postData('http://localhost:3001/products', JSON.stringify(productsData));
+                        console.log('Request completed successfully');
+                    } catch (error) {
+                        console.error('Something went wrong:', error);
+                    }
+                }
+
+                postAllData();
+            });
+        }
     }
 });
